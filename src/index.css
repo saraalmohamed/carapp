@@ -11,3 +11,98 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  position: relative; /* set container to a positioned element */
+  margin-left: 10px;
+
+}
+
+.right-header {
+  margin-top: 10px;
+  margin-right: 10px;
+  position: absolute; /* position element absolutely */
+  top: 0;
+  right: 0;
+  word-spacing: 15px;
+  padding: 10px;
+}
+
+
+
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #EBEBEB;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.top-image {
+
+  background-color: #EBEBEB;
+  position: absolute;
+  height: 400px;
+  width: 1200px;
+  top: 100%;
+  left: 50%;
+  right: 55%;
+  box-shadow:5px 5px 5px rgba(0,0,0,0.5) ;
+  transform: translate(-55%, 0%);
+}
+
+.car-image
+{
+  position: absolute;
+  top: 100;
+  right: 80;
+  transform: translate(115%, 30%);
+}
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 6px;
+}
+
+
+
+.menu-bar {
+  font-size: 18px;
+  color: #F1FAEE;;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #1D3557;
+}
+
+.menu-bar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  margin:25px;
+
+}
+
+.menu-bar li {
+  align-items: center;
+  margin-right: 50px;
+
+}
+
+.menu-bar li a {
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+
+}
