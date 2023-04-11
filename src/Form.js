@@ -47,12 +47,26 @@ function Form() {
 
   };
 
-  const [inputValue, setInputValue] = useState("");
-  const [submittedValue, setSubmittedValue] = useState("");
-  const handleSubmit = () => {
-    setSubmittedValue(inputValue);
-    setInputValue("");
-  }
+  const [emailValue, setEmailValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
+  const [submittedEmail, setSubmittedEmail] = useState('');
+  const [submittedPassword, setSubmittedPassword] = useState('');
+  
+  const handleEmailChange = (event) => {
+    setEmailValue(event.target.value);
+  };
+  
+  const handlePasswordChange = (event) => {
+    setPasswordValue(event.target.value);
+  };
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmittedEmail(emailValue);
+    setSubmittedPassword(passwordValue);
+    setEmailValue('');
+    setPasswordValue('');
+  };
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -91,24 +105,24 @@ function Form() {
     <h1 style={{...styles, lineHeight: '1.2', marginTop: "-10px", color: '#457B9D', zIndex: '1'}}> 
       Sign Into Your Account <br></br> </h1>
 
-        <div>
-          <input style={{...inputStyles, zIndex: 1, position: 'absolute',left: 530, top: 275, width: '300px', height: "30px"}} 
-          type="text" placeholder="Enter Email" value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)} />
+        <form onSubmit={handleSubmit}>
+      <input style={{...inputStyles, zIndex: 1, position: 'absolute',left: 530, top: 275, width: '300px', height: "30px"}} 
+        type="text" placeholder="Enter Email" value={emailValue}
+        onChange={handleEmailChange} />
 
-          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 350, fontWeight: "bold"}}>Submitted value email: {submittedValue}</p>
+      <p style={{zIndex: 1, position: 'absolute',left: 90, top: 350, fontWeight: "bold"}}>Submitted email value: {submittedEmail}</p>
 
-          <input style={{...inputStyles, zIndex: 1, position: 'absolute',left: 530, top: 375, width: '300px', height: "30px"}} 
-          type="text" placeholder="Enter Password" value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)} />
+      <input style={{...inputStyles, zIndex: 1, position: 'absolute',left: 530, top: 375, width: '300px', height: "30px"}} 
+        type="password" placeholder="Enter Password" value={passwordValue}
+        onChange={handlePasswordChange} />
 
-          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 450, fontWeight: "bold"}}>Submitted value password: {submittedValue}</p>
+      <p style={{zIndex: 1, position: 'absolute',left: 90, top: 425, fontWeight: "bold"}}>Submitted password value: {submittedPassword}</p>
 
-          <div className="white-box"></div>
+      <button style={{...buttonStyles, zIndex: 1, position: 'absolute',left: 590, top: 550,
+          fontWeight: "bold", width: '200px', height: '60px', fontSize: '20px'}}>Submit</button>
+       </form>
+        <div className="white-box"></div>
 
-          <button onClick = {handleSubmit} style={{...buttonStyles,  zIndex: 1, position: 'absolute',left: 590, top: 550,
-          fontWeight: "bold", width: '200px', height: '60px', fontSize: '20px'}}>Log In</button>
-        </div>;
     </div>
   );
 }
