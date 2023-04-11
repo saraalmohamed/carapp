@@ -9,4 +9,4 @@ function VIN() {
   );
 }
 
-export default VIN;x
+export default VIN;

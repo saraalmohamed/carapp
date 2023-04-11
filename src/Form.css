@@ -1,0 +1,10 @@
+.white-box {
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    position: absolute;
+    top: 52.5%;
+    left: 45%;
+    transform: translate(-38%, -50%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
