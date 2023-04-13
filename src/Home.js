@@ -5,6 +5,7 @@ import profile from './Profile.png';
 import car from './car.png'; 
 import './App.js'; 
 import Button from './Button';
+import {Link} from 'react-router-dom';
 
 function Home () {
 
@@ -36,32 +37,27 @@ function Home () {
 
   return (
 
-    //Setting the background picture
+    <div>
     <div className='background-container' style={{backgroundColor: "#EBEBEB"}}>
       <div className = "scrollbar">
 
       {/*Setting the logo in the top left corner*/}
-      <img src={profile} alt="Logo" style={{ position: 'absolute', top: '20px', left: '50px', height: '50px', width: '50px', zIndex: '1' }}/>
-      {/*Text with logo*/}
+      <a href="/">
+         <img src={profile} alt="Logo" style={{ position: 'absolute', top: '20px', left: '50px', height: '50px', width: '50px', zIndex: '1' }}/>
+      </a>        {/*Text with logo*/}
       <p style={{position: 'absolute', top: '-5px', left: '45px', height: '100px', fontSize: '10px', color: "white", zIndex: '1'}}></p>
 
       {/*Menu bar hyperlinks*/}
       <div className='container-menu'>
       <div className='menu-bar'>
       <ul>
-        <li ><a href="#">Home</a></li>
+         <li><Link to="/">Home</Link></li>
         <li ><a href="#">About Us</a></li>
         <li ><a href="#">Maintenance</a></li>
         <li ><a href="#">Account</a></li>
       </ul>
       </div>
       </div>
-
-      {/*Top right sign in and register button*/}
-      <div className='top-right'>
-        <button style={{...buttonStyles, marginRight: "20px", fontWeight: 'bold'}}>Register</button>
-      </div>
-
 
       {/*Setting layered image for lotus car*/}
       <img src={car} alt="Example" className = 'car-image' width="620" height="500"/>
@@ -84,6 +80,7 @@ function Home () {
 
 
     {/*End of the program*/}
+      </div>
       </div>
       </div>
     );

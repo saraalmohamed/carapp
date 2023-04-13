@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { Link } from "react-router-dom";
 
 function Button() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,6 +48,10 @@ function Button() {
     navigate('/Form');
   };
 
+  const handleRegister = () => {
+    navigate('/Register');
+  };
+
 
   return (
     <div>
@@ -57,7 +60,7 @@ function Button() {
       onClick={handleButtonClick}>Look Up VIN</button>
       {isOpen && (
         <div>
-          <input style={{...inputStyles, zIndex: 1, position: 'absolute',left: 90, top: 580, width: '180px', height: "32px"}} 
+          <input style={{...inputStyles, zIndex: 1, position: 'absolute',left: 90, top: 580, width: '200px', height: "50px"}} 
           type="text" placeholder="Enter VIN number" value={inputValue}
           onChange={(event) => setInputValue(event.target.value)} />
 
@@ -71,6 +74,10 @@ function Button() {
       <button style={{...buttonStyles, position: 'absolute',left: 350, top: 500, 
       width: '200px', padding: '20px', fontSize: "20px", fontWeight: "bold"}}
       onClick={handleButtonTwo}>Sign In</button>
+
+      <div className='top-right'>
+        <button onClick= {handleRegister} style={{...buttonStyles, marginRight: "20px", fontWeight: 'bold'}}>Register</button>
+      </div>
 
     </div>
   );
