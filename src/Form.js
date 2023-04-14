@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import './scrollbar.css'
-import Button from './Button';
+import Button from "./Button";
 import './App.css';
 import profile from './Profile.png'; 
 import './Form.css'

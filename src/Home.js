@@ -3,7 +3,6 @@ import './App.css';
 import './scrollbar.css'
 import profile from './Profile.png'; 
 import car from './car.png'; 
-import './App.js'; 
 import Button from './Button';
 import {Link} from 'react-router-dom';
 
@@ -51,10 +50,9 @@ function Home () {
       <div className='container-menu'>
       <div className='menu-bar'>
       <ul>
-         <li><Link to="/">Home</Link></li>
-        <li ><a href="#">About Us</a></li>
-        <li ><a href="#">Maintenance</a></li>
-        <li ><a href="#">Account</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/Maintenance">Maintenance</Link></li>
+        <li><Link to="/Account">Account</Link></li> 
       </ul>
       </div>
       </div>
