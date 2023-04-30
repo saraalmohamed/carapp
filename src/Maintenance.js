@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import profile from './Profile.png'; 
 import Form from 'react-bootstrap/Form';
@@ -47,10 +47,29 @@ function Maintenance() {
     
       };
 
+      const [inputValue, setInputValue] = useState("");
+      const [data, setData] = useState({});
+
+   // have to have the c# http component running
+  // REMEMBER to change local host to the one being ran
+        fetch('http://localhost:5226/getbasicinfo?vin=' + inputValue)
+        .then(response => response.json())
+          .then (json => {
+            setData(json);
+            // console.log(data);
+        })
+
+      useEffect(() => {
+        console.log(data);
+      }, [data]);
+      
+
       const navigate = useNavigate(); 
       const handleRegister = () => {
         navigate('/Register');
       };
+
+      
 
 return (
 

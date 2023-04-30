@@ -51,7 +51,7 @@ function Button() {
 
     // have to have the c# http component running
     // REMEMBER to change local host to the one being ran
-    fetch('http://localhost:5256/getbasicinfo?vin=' + inputValue)
+    fetch('http://localhost:3000/getbasicinfo?vin=' + inputValue)
     .then(response => response.json())
       .then (json => {
         setData(json);
@@ -83,8 +83,6 @@ function Button() {
           <input style={{...inputStyles, zIndex: 1, position: 'absolute',left: 90, top: 580, width: '200px', height: "50px"}} 
           type="text" placeholder="Enter VIN number" value={inputValue}
           onChange={(event) => setInputValue(event.target.value)} />
-
-          
 
           <button style={{...buttonStyles, zIndex: 1, position: 'absolute',left: 90, top: 650, fontWeight: "bold"}} 
           onClick = {handleSubmit}>Search</button>
