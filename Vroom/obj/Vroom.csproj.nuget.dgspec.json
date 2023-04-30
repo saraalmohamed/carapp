@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/killbox/src/Vroom/Vroom.csproj": {}
+  },
+  "projects": {
+    "/home/killbox/src/Vroom/Vroom.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/killbox/src/Vroom/Vroom.csproj",
+        "projectName": "Vroom",
+        "projectPath": "/home/killbox/src/Vroom/Vroom.csproj",
+        "packagesPath": "/home/killbox/.nuget/packages/",
+        "outputPath": "/home/killbox/src/Vroom/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/killbox/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Json.NET": {
+              "target": "Package",
+              "version": "[1.0.33, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.19.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.104/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
