@@ -1,5 +1,10 @@
-import React, { useState } from "react";
+import { wait } from "@testing-library/user-event/dist/utils";
+import React, { useState, useEffect } from "react";
+import Popup from 'reactjs-popup';
+
+
 import { useNavigate } from 'react-router-dom';
+
 
 function Button() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,12 +41,28 @@ function Button() {
     margin: "10px",
   };
 
+
   const [inputValue, setInputValue] = useState("");
   const [submittedValue, setSubmittedValue] = useState("");
+  const [data, setData] = useState({});
   const handleSubmit = () => {
     setSubmittedValue(inputValue);
     setInputValue("");
+
+    // have to have the c# http component running
+    // REMEMBER to change local host to the one being ran
+    fetch('http://localhost:5256/getbasicinfo?vin=' + inputValue)
+    .then(response => response.json())
+      .then (json => {
+        setData(json);
+        // console.log(data);
+    })
   }
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+  
 
   const navigate = useNavigate();
   const handleButtonTwo = () => {
@@ -51,7 +72,6 @@ function Button() {
   const handleRegister = () => {
     navigate('/Register');
   };
-
 
   return (
     <div>
@@ -64,10 +84,28 @@ function Button() {
           type="text" placeholder="Enter VIN number" value={inputValue}
           onChange={(event) => setInputValue(event.target.value)} />
 
+          
+
           <button style={{...buttonStyles, zIndex: 1, position: 'absolute',left: 90, top: 650, fontWeight: "bold"}} 
           onClick = {handleSubmit}>Search</button>
 
-          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 750, fontWeight: "bold"}}>Submitted value: {submittedValue}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 750, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[1].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 770, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[2].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 790, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[3].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 810, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[4].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 830, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[5].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 850, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[7].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 870, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[8].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 890, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[10].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 910, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[11].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 930, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[27].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 950, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[28].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 970, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[30].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 90, top: 990, fontWeight: "bold"}}>Submitted value: {data.length > 1 ? data[36].Value : ""}</p>
+
+
+
+
         </div>
       )}
 
