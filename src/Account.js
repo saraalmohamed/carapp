@@ -30,7 +30,7 @@ function Account() {
         position: 'absolute',
         width: '800px',
         padding: '20px',
-        left: '520px',
+        left: '600px',
         top: '100px',
         fontSize: '32.5px',
         fontWeight: 'bold'
@@ -51,6 +51,7 @@ function Account() {
       const handleRegister = () => {
         navigate('/Register');
       };
+    
 
 return (
 
@@ -85,6 +86,36 @@ return (
        zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)"}}> 
       Your Account <br></br> </h1>
       </div>
+
+      <h2 style={{lineHeight: '1.2', marginTop: "-10px", color: '#457B9D',
+       zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)",
+        position: 'absolute', width: '800px', padding: '20px', left: '300px', top: '200px', fontSize: '20px', fontWeight: 'bold'}}> 
+      Your Car:  <br></br> </h2>
+
+      <h2 style={{lineHeight: '1.2', marginTop: "-10px", color: '#457B9D',
+       zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)",
+        position: 'absolute', width: '800px', padding: '20px', left: '300px', top: '250px', fontSize: '20px', fontWeight: 'bold'}}> 
+      VIN Number: <br></br> </h2>
+
+      <h2 style={{lineHeight: '1.2', marginTop: "-10px", color: '#457B9D',
+       zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)",
+        position: 'absolute', width: '800px', padding: '20px', left: '300px', top: '300px', fontSize: '20px', fontWeight: 'bold'}}> 
+      Make:  <br></br> </h2>
+
+      <h2 style={{lineHeight: '1.2', marginTop: "-10px", color: '#457B9D',
+       zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)",
+        position: 'absolute', width: '800px', padding: '20px', left: '300px', top: '350px', fontSize: '20px', fontWeight: 'bold'}}> 
+      Model:  <br></br> </h2>
+
+      <h2 style={{lineHeight: '1.2', marginTop: "-10px", color: '#457B9D',
+       zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)",
+        position: 'absolute', width: '800px', padding: '20px', left: '300px', top: '400px', fontSize: '20px', fontWeight: 'bold'}}> 
+      Oil:  <br></br> </h2>
+
+      <h2 style={{lineHeight: '1.2', marginTop: "-10px", color: '#457B9D',
+       zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)",
+        position: 'absolute', width: '800px', padding: '20px', left: '300px', top: '450px', fontSize: '20px', fontWeight: 'bold'}}> 
+      Coolant:  <br></br> </h2>
         
         </div>
     );

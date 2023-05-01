@@ -51,11 +51,11 @@ function Button() {
 
     // have to have the c# http component running
     // REMEMBER to change local host to the one being ran
-    fetch('http://localhost:3000/getbasicinfo?vin=' + inputValue)
+    fetch('http://localhost:5256/getbasicinfo?vin=' + inputValue)
     .then(response => response.json())
       .then (json => {
         setData(json);
-        // console.log(data);
+         console.log(data);
     })
   }
 

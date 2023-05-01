@@ -74,6 +74,19 @@ function Form() {
     navigate('/Register');
   };
 
+  fetch('localhost:5226/login?username={put username here}&password={put password here}' + inputValue)
+  .then(response => response.json())
+    .then (json => {
+      setData(json);
+       console.log(data);
+  })
+
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
+
   return (
     <div className='background-container' style={{backgroundColor: "#EBEBEB"}}>
       <div className = "scrollbar">
@@ -89,7 +102,6 @@ function Form() {
       <div className='menu-bar'>
         <ul>
         <li><Link to="/">Home</Link></li>          
-        <li ><a href="#">About Us</a></li>
           <li ><a href="#">Maintenance</a></li>
           <li ><a href="#">Account</a></li>
         </ul>
@@ -111,13 +123,13 @@ function Form() {
         type="text" placeholder="Enter Email" value={emailValue}
         onChange={handleEmailChange} />
 
-      <p style={{zIndex: 1, position: 'absolute',left: 90, top: 350, fontWeight: "bold"}}>Submitted email value: {submittedEmail}</p>
+      <p style={{zIndex: 1, position: 'absolute',left: 90, top: 350, fontWeight: "bold"}}>{submittedEmail}</p>
 
       <input style={{...inputStyles, zIndex: 1, position: 'absolute',left: 530, top: 375, width: '350px', height: "70px"}} 
         type="password" placeholder="Enter Password" value={passwordValue}
         onChange={handlePasswordChange} />
 
-      <p style={{zIndex: 1, position: 'absolute',left: 90, top: 430, fontWeight: "bold"}}>Submitted password value: {submittedPassword}</p>
+      <p style={{zIndex: 1, position: 'absolute',left: 90, top: 430, fontWeight: "bold"}}>{submittedPassword}</p>
 
       <button style={{...buttonStyles, zIndex: 1, position: 'absolute',left: 590, top: 550,
           fontWeight: "bold", width: '200px', height: '60px', fontSize: '20px'}}>Submit</button>

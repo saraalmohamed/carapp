@@ -8,6 +8,13 @@ import './App.css';
 import bmw from './bmw.png'
 
 function Maintenance() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsOpen(!isOpen);
+  };
+
     const buttonStyles = {
         backgroundColor: '#457B9D',
         border: 'none',
@@ -47,29 +54,19 @@ function Maintenance() {
     
       };
 
-      const [inputValue, setInputValue] = useState("");
-      const [data, setData] = useState({});
-
-   // have to have the c# http component running
-  // REMEMBER to change local host to the one being ran
-        fetch('http://localhost:5226/getbasicinfo?vin=' + inputValue)
-        .then(response => response.json())
-          .then (json => {
-            setData(json);
-            // console.log(data);
-        })
-
-      useEffect(() => {
-        console.log(data);
-      }, [data]);
-      
 
       const navigate = useNavigate(); 
       const handleRegister = () => {
         navigate('/Register');
       };
 
-      
+        const [inputValue, setInputValue] = useState("");
+        const [submittedValue, setSubmittedValue] = useState("");
+        const [data, setData] = useState({});
+        const handleSubmit = () => {
+          setSubmittedValue(inputValue);
+          setInputValue("");
+   }
 
 return (
 
@@ -110,16 +107,66 @@ return (
       <h2 style={{lineHeight: '1.2', marginTop: "-10px", color: '#457B9D',
        zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)",
         position: 'absolute', width: '800px', padding: '20px', left: '100px', top: '200px', fontSize: '20px', fontWeight: 'bold'}}> 
-      Your Car: *pull data from the database* <br></br> </h2>
+      Your Car:  <br></br> </h2>
 
       <h2 style={{lineHeight: '1.2', marginTop: "-10px", color: '#457B9D',
        zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)",
         position: 'absolute', width: '800px', padding: '20px', left: '100px', top: '250px', fontSize: '20px', fontWeight: 'bold'}}> 
-      Other things about Maintenance <br></br> </h2>
+      VIN Number: <br></br> </h2>
+
+      <h2 style={{lineHeight: '1.2', marginTop: "-10px", color: '#457B9D',
+       zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)",
+        position: 'absolute', width: '800px', padding: '20px', left: '100px', top: '300px', fontSize: '20px', fontWeight: 'bold'}}> 
+      Make:  <br></br> </h2>
+
+      <h2 style={{lineHeight: '1.2', marginTop: "-10px", color: '#457B9D',
+       zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)",
+        position: 'absolute', width: '800px', padding: '20px', left: '100px', top: '350px', fontSize: '20px', fontWeight: 'bold'}}> 
+      Model:  <br></br> </h2>
+
+      <h2 style={{lineHeight: '1.2', marginTop: "-10px", color: '#457B9D',
+       zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)",
+        position: 'absolute', width: '800px', padding: '20px', left: '100px', top: '400px', fontSize: '20px', fontWeight: 'bold'}}> 
+      Oil:  <br></br> </h2>
+
+      <h2 style={{lineHeight: '1.2', marginTop: "-10px", color: '#457B9D',
+       zIndex: '1', textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.5)",
+        position: 'absolute', width: '800px', padding: '20px', left: '100px', top: '450px', fontSize: '20px', fontWeight: 'bold'}}> 
+      Coolant:  <br></br> </h2>
+
+      <button  style={{...buttonStyles, zIndex: 1, position: 'absolute',left: 90, top: 550,  
+      width: '200px', padding: '20px', fontSize: "20px", fontWeight: "bold"}} 
+      onClick={handleButtonClick}>Look Up VIN</button>
+      {isOpen && (
+        <div>
+          <input style={{...inputStyles, zIndex: 1, position: 'absolute',left: 90, top: 630, width: '200px', height: "50px"}} 
+          type="text" placeholder="Enter VIN number" value={inputValue}
+          onChange={(event) => setInputValue(event.target.value)} />
+
+          <button style={{...buttonStyles, zIndex: 1, position: 'absolute',left: 90, top: 700, fontWeight: "bold"}} 
+          onClick = {handleSubmit}>Search</button>
+
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 215, fontWeight: "bold"}}>{data.length > 1 ? data[1].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 245, fontWeight: "bold"}}>{data.length > 1 ? data[2].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 265, fontWeight: "bold"}}> {data.length > 1 ? data[3].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 300, fontWeight: "bold"}}> {data.length > 1 ? data[4].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 350, fontWeight: "bold"}}>{data.length > 1 ? data[5].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 400, fontWeight: "bold"}}> {data.length > 1 ? data[7].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 450, fontWeight: "bold"}}> {data.length > 1 ? data[8].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 500, fontWeight: "bold"}}>{data.length > 1 ? data[10].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 550, fontWeight: "bold"}}> {data.length > 1 ? data[11].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 600, fontWeight: "bold"}}> {data.length > 1 ? data[27].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 650, fontWeight: "bold"}}>{data.length > 1 ? data[28].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 700, fontWeight: "bold"}}> {data.length > 1 ? data[30].Value : ""}</p>
+          <p style={{zIndex: 1, position: 'absolute',left: 280, top: 7500, fontWeight: "bold"}}>{data.length > 1 ? data[36].Value : ""}</p>
+
+
 
 
         </div>
-        
+      )}
+
+      </div>
     </div>
 );
 

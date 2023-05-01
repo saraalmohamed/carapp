@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/killbox/src/Vroom/Vroom.csproj": {}
+    "C:\\Users\\Sisis\\OneDrive\\Documents\\GitHub\\carapp\\Vroom\\Vroom.csproj": {}
   },
   "projects": {
-    "/home/killbox/src/Vroom/Vroom.csproj": {
+    "C:\\Users\\Sisis\\OneDrive\\Documents\\GitHub\\carapp\\Vroom\\Vroom.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/killbox/src/Vroom/Vroom.csproj",
+        "projectUniqueName": "C:\\Users\\Sisis\\OneDrive\\Documents\\GitHub\\carapp\\Vroom\\Vroom.csproj",
         "projectName": "Vroom",
-        "projectPath": "/home/killbox/src/Vroom/Vroom.csproj",
-        "packagesPath": "/home/killbox/.nuget/packages/",
-        "outputPath": "/home/killbox/src/Vroom/obj/",
+        "projectPath": "C:\\Users\\Sisis\\OneDrive\\Documents\\GitHub\\carapp\\Vroom\\Vroom.csproj",
+        "packagesPath": "C:\\Users\\Sisis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sisis\\OneDrive\\Documents\\GitHub\\carapp\\Vroom\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/killbox/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Sisis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -78,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.104/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
